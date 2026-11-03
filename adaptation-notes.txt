@@ -1,0 +1,60 @@
+ADAPTATION NOTES
+
+Structure and evidence
+- Original slides 5, 21, 26 and 36 were removed at the user's request.
+  Remaining slides keep their order and consecutive presentation numbering.
+- All retained result values, image-mask pairs and RTM insets are preserved.
+- Keeps reported-protocol distinctions and provisional global-local AI-edit
+  status. Speaker notes remain accessible on their corresponding slide.
+- Retains original image bytes. Research images have not been generated,
+  retouched or downsampled.
+- The three RTM inset viewports use the exact crop fractions stored in the
+  PowerPoint, wrapped around unchanged native PNG bytes.
+
+Focused visual changes
+- A simpler DINOv3 image-to-score pipeline.
+- A four-row H0-H3 diagram distinguishing learned feature refinement from
+  the final interpolation of logits, with the refinement and H3 fusion explained.
+- A simpler global-local flow, with the original technical diagram available.
+- Clickable Align to crop and Stitch explanations show spatial resampling and
+  how a 512x512x1 crop probability map maps to its original-image footprint.
+  Selectable 512x512 and 2048x1024 source examples show both output geometries.
+- The 1024-pixel long-side cap is explained as a compact output representation;
+  it preserves aspect ratio and does not enlarge smaller original images.
+- A clickable H3 fusion explanation shows 4x64=256 concatenated channels,
+  the learned 256-to-128-to-1024 correction and its addition to block 24.
+- Decoder grid-key and short-schedule footnotes are removed from the slide
+  surface; their details remain in speaker notes.
+- Slide typography adapts to available space within bounded sizes. Numeric
+  table columns follow their content rather than stretching across the screen.
+- Optional diagram traces and larger inspection of image-mask examples.
+- Bottom numerical slide counts are hidden; original slide 7 is titled Evaluation.
+- Best comparable results are bold; second-best DISTINCT results are underlined.
+  Ties share rank. Missing scores are ignored. F1, AP and latency are ranked
+  separately, and latency is lower-is-better. Parameter counts, seeds and
+  diagnostic thresholds are not ranked as performance metrics.
+- Current slides 11, 12 and 14 (source 12, 13 and 15) are unranked. Dataset-size
+  diagnostics, compression degradation and diagnostic threshold scans are not
+  presented as competing-model score rows.
+- In the JPEG curriculum each slash position is ranked independently across
+  methods. Its left/right reading key is shown on a separate highlighted line.
+- OpenSDI mean rows are visually distinguished as five-generator averages;
+  they are not additional datasets. The source name OpenSDI is retained.
+
+Reporting clarifications based on the supplied reviewed reference
+- Slide 25: restored the missing slash in 0.7110/0.4499. Explained that cells
+  are original-input F1 / JPEG-50 stress-cohort F1, not F1/AP. No score changed.
+- Slide 27: made explicit that the mixture improves every dataset relative
+  to RTM-only training, rather than relative to the historical baseline.
+- Original slide 36's composite close-up page was removed as requested;
+  the interactive example pages and the original RTM detail insets remain.
+- Slide 9 notes: retained the reviewed ADCD-S Lovasz-loss caveat; this does
+  not change measured results or establish the released checkpoint's loss.
+
+Source files
+IMDL_Zurich_Full.pptx
+IMDL_Thesis_Comprehensive_Research_Reference_REVIEWED_2026-10-29.md
+Global-Local Fusion DINO Pipeline.png (supplied PNG)
+dataset_examples_seed43-part-001.zip through part-006.zip
+
+Slide references above use the original PowerPoint numbers.
